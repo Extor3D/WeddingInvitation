@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/LifeCounter/LifeCounter.gd" type="Script" id=1]
+[ext_resource path="res://UI/LifeCounter/LifeUnit.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/CoinCounter/Win.wav" type="AudioStream" id=4]
+
+[node name="LifeCounter" type="Label"]
+margin_left = 3.56978
+margin_top = 3.98975
+margin_right = 86.5698
+margin_bottom = 36.9898
+custom_colors/font_color = Color( 0.94902, 0.65098, 0.368627, 1 )
+text = "Life:"
+script = ExtResource( 1 )
+life_scene = ExtResource( 2 )
+
+[node name="LifePosition" type="Node2D" parent="."]
+position = Vector2( 102.11, -1.46989 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2( -104, -64 )
+emitting = false
+amount = 128
+lifetime = 4.0
+explosiveness = 1.0
+lifetime_randomness = 1.0
+local_coords = false
+direction = Vector2( 1, 1 )
+spread = 67.0
+initial_velocity = 400.0
+initial_velocity_random = 0.69
+angular_velocity = 424.42
+angular_velocity_random = 0.98
+linear_accel = 71.57
+linear_accel_random = 1.0
+scale_amount = 12.0
+scale_amount_random = 0.25
+color = Color( 0.847059, 0.894118, 1, 1 )
+hue_variation = 1.0
+hue_variation_random = 1.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
